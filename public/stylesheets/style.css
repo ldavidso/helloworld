@@ -1,0 +1,139 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url("../images/background.jpg") no-repeat fixed 0px 0px / 100% auto;
+  margin: 0px;
+  padding: 0px;
+}
+
+.main {
+  margin-left: 40px;
+  margin-right:40px;
+}
+
+.title {
+  color: white;
+  background: rgba(50,50,50,0.75);
+  padding: 0 5px;
+  width: 300px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  border: solid;
+  border-width: thin;
+  border-color: #4F81BD;
+}
+
+.heading {
+  display: table-row;
+  font-weight: bold;
+  background-color: #4F81BD;
+}
+
+.firstname {
+  font-weight: bold;
+}
+
+.row {
+  display: table-row;
+}
+
+.row:nth-of-type(odd) {
+  background-color: #D3DFEE;
+}
+
+.cell {
+  display: table-cell;
+  width: 11%;
+  border-top: solid;
+  border-width: thin;
+  border-color: #4F81BD;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+p.errorMessage {
+  padding-left: 5px;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+}
+
+.errorlist {
+  background-color: #C9A1A1;
+  width: 680px;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #F2F2F2;
+  padding: 40px;
+}
+
+input[type=text], select {
+  width: 80%;
+  float: left;
+  margin: 4px 0;
+  padding-left: 5px;
+  display: block;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 80%;
+  background-color: #8dafe6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 120px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #99b6e7;
+}
+
+input:focus:invalid{
+  color: red;
+  border: 2px solid red;
+  background-image: url("../images/required.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  box-shadow: none;
+}
+
+input:invalid{
+  border: 2px solid red;
+  background-image: url("../images/required.png");
+  background-position: right bottom;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  box-shadow: none;
+}
+
+input[type=text]:valid {
+  background-color: white;
+}
+
+.input {
+  clear: both;
+}
+
+label {
+  width: 120px;
+  display: inline-block;
+  float: left;
+  font-weight: bold;
+}
+
+.g-recaptcha {
+  padding-left: 120px;
+}

@@ -1,0 +1,36 @@
+extends layout
+block variables
+
+block content
+  .title
+    h1= title
+  .container.containermin
+    .table
+      .heading
+        .cell First Name
+        .cell Last Name
+        .cell Address1
+        .cell Address2
+        .cell City
+        .cell State
+        .cell Zip
+        .cell Country
+        .cell Date
+      each user, i in userlist
+        .row
+          .cell.firstname= user.firstname
+          .cell= user.lastname
+          .cell= user.address1
+          .cell= user.address2
+          .cell= user.city
+          .cell= user.state
+          .cell= user.zip
+          .cell= user.country
+          .cell= user.date
+  script.
+    (function(){
+      var header = document.getElementById("header");
+      var footer = document.getElementById("footer");
+      header.style.min-width="680px";
+      footer.style.min-height="680px";
+    })();

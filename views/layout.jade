@@ -1,0 +1,28 @@
+block variables
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/stylesheets/style.css", type="text/css")
+    if cssfile
+      link(rel="stylesheet", href="/stylesheets/#{cssfile + '.css'}", type="text/css")
+    script(src='https://www.google.com/recaptcha/api.js').
+    script(src='/javascripts/jquery-2.2.0.min.js').
+    script(src='/javascripts/jquery.xmldom-1.0.min.js').
+    script(src='/javascripts/USPSAddressValidator.js').
+    //[if lt IE 9]><script src="/javascripts/html5shiv.min.js"></script><![endif]
+    if cssfile == 'register'
+      script(type="text/javascript").
+        $(document).ready(function() {
+          setUrlMode(false);
+          userId = "558NONE03834";
+          cityFieldName = "#inputCity";
+          stateFieldName = "#inputState";
+          zipCodeFieldName = "#inputZip";
+          $("#inputZip").change(function() {
+            GetCityStateInfo();
+          });
+        });
+  body
+    .main
+      block content

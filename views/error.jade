@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .title
+    h1= message
+  .container
+    h2= error.status
+    p Looks like the page you are looking for is not found. Please return to the homepage.
+
+    ul
+      li
+        a(href="/") Home

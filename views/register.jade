@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    .title
+      h1= title
+    if (isEmptyObject(errors) == false)
+      .errorlist
+        p.errorMessage= "The following errors occurred:"
+        ul
+          each error in errors
+            li= error.msg
+          br
+    .container
+      form#formAddUser(name="adduser", method="post", action="/")
+        .input
+          label(for="inputFirstName") First Name
+          input#inputFirstName(type="text", required, maxlength="35", name="firstname", value=(post)?"#{post.firstname}":"")
+        .input
+          label(for="inputLastName") Last Name
+          input#inputLastName(type="text", required, name="lastname", maxlength="35", value=(post)?"#{post.lastname}":"")
+        .input
+          label(for="inputAddress1") Address Line 1
+          input#inputAddress1(type="text", name="address1", maxlength="50", value=(post)?"#{post.address1}":"")
+        .input
+          label(for="inputAddress2") Address Line 2
+          input#inputAddress2(type="text", name="address2", maxlength="50", value=(post)?"#{post.address2}":"")
+        .input
+          label(for="inputZip") Zip Code
+          input#inputZip(type="text", pattern="(\\d{5}([\\-]\\d{4})?)", name="zip", , value=(post)?"#{post.zip}":"")
+        .input
+          label(for="inputCity") City
+          input#inputCity(type="text", name="city", maxlength="25", value=(post)?"#{post.city}":"")
+        .input
+          label(for="inputState") State
+          select#inputState(name="state")
+            each usstate in usstates
+              if(post)
+                if(post.state == usstate.val)
+                  option(value="#{usstate.val}" selected)= usstate.statename
+              else
+                option(value="#{usstate.val}")= usstate.statename
+        .input
+          label(for="inputCountry") Country
+          input#inputCountry(type="text", value="US", name="country", readonly)
+        .input
+          .g-recaptcha(data-sitekey="6LdwUBgTAAAAAL_ZArK0CzYeeESjlgN2RiPm1tle")
+
+        input#btnSubmit(type="submit", value="Submit")
